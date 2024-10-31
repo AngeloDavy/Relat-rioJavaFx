@@ -43,6 +43,12 @@ public class TelaProdutos extends javax.swing.JFrame {
         pnlConsultaProduto = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        btnPesquisar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblProdutos = new javax.swing.JTable();
+        btnAlterar = new javax.swing.JButton();
+        btnAdicionar = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,7 +131,7 @@ public class TelaProdutos extends javax.swing.JFrame {
                     .addComponent(txtQtdProdutoCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlCadastroPordutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnConfirmarCadastroProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(btnConfirmarCadastroProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                     .addComponent(btnCancelarCadastroProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(19, 19, 19))
         );
@@ -135,7 +141,23 @@ public class TelaProdutos extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Código:");
 
-        jTextField1.setText("jTextField1");
+        btnPesquisar.setText("Pesquisar");
+
+        tblProdutos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Código", "Nome", "Valor", "Quantidade"
+            }
+        ));
+        jScrollPane1.setViewportView(tblProdutos);
+
+        btnAlterar.setText("Alterar");
+
+        btnAdicionar.setText("Adicionar");
+
+        btnExcluir.setText("Excluir");
 
         javax.swing.GroupLayout pnlConsultaProdutoLayout = new javax.swing.GroupLayout(pnlConsultaProduto);
         pnlConsultaProduto.setLayout(pnlConsultaProdutoLayout);
@@ -143,10 +165,19 @@ public class TelaProdutos extends javax.swing.JFrame {
             pnlConsultaProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlConsultaProdutoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlConsultaProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(pnlConsultaProdutoLayout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(275, Short.MAX_VALUE))
+                .addGroup(pnlConsultaProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAlterar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAdicionar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         pnlConsultaProdutoLayout.setVerticalGroup(
             pnlConsultaProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,8 +185,20 @@ public class TelaProdutos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlConsultaProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(229, Short.MAX_VALUE))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlConsultaProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnlConsultaProdutoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlConsultaProdutoLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Consultar", pnlConsultaProduto);
@@ -214,19 +257,25 @@ public class TelaProdutos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdicionar;
+    private javax.swing.JButton btnAlterar;
     private javax.swing.JButton btnCancelarCadastroProduto;
     private javax.swing.JButton btnConfirmarCadastroProduto;
+    private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton btnPesquisar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblIDProduto;
     private javax.swing.JPanel pnlCadastroPorduto;
     private javax.swing.JPanel pnlConsultaProduto;
+    private javax.swing.JTable tblProdutos;
     private javax.swing.JTextField txtCodigoProdutoCadastro;
     private javax.swing.JTextField txtNomeProdutoCadastro;
     private javax.swing.JTextField txtQtdProdutoCadastro;
