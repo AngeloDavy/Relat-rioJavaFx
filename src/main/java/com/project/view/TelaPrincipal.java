@@ -59,6 +59,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         mnuCadastrarProdutos = new javax.swing.JMenuItem();
         mnuClientes = new javax.swing.JMenu();
         mnuCadastrarClientes = new javax.swing.JMenuItem();
+        mnuSair = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -294,6 +295,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu1.add(mnuClientes);
 
+        mnuSair.setText("Sair");
+        jMenu1.add(mnuSair);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Ajuda");
@@ -395,6 +399,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnuCadastrarProdutos;
     private javax.swing.JMenu mnuClientes;
     private javax.swing.JMenu mnuProdutos;
+    private javax.swing.JMenuItem mnuSair;
     private javax.swing.JPanel pnlRelatorio;
     private javax.swing.JPanel pnlVenda;
     private javax.swing.JFormattedTextField txtCPF;

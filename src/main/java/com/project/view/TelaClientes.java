@@ -43,7 +43,7 @@ public class TelaClientes extends javax.swing.JFrame {
         txtNomeConsultar = new javax.swing.JTextField();
         btnPesquisarNomeCliente = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblClientes = new javax.swing.JTable();
         btnAlterarCliente = new javax.swing.JButton();
         btnAdicionarCliente = new javax.swing.JButton();
         btnExcluirCliente = new javax.swing.JButton();
@@ -136,18 +136,15 @@ public class TelaClientes extends javax.swing.JFrame {
 
         btnPesquisarNomeCliente.setText("Pesquisar");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "CPF", "Nome", "Email"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblClientes);
 
         btnAlterarCliente.setText("Alterar");
 
@@ -207,7 +204,7 @@ public class TelaClientes extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
@@ -262,10 +259,10 @@ public class TelaClientes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblIDCliente;
     private javax.swing.JPanel pnlCadastroCliente;
     private javax.swing.JPanel pnlConsultaCliente;
+    private javax.swing.JTable tblClientes;
     private javax.swing.JFormattedTextField txtCPFCadastro;
     private javax.swing.JTextField txtEmailCadastro;
     private javax.swing.JTextField txtNomeCadastro;
